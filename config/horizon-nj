@@ -1,0 +1,19 @@
+#!/bin/bash
+
+TOMCAT_HOME=/opt/horizon
+WEBAPP_LOCATION=$TOMCAT_HOME/webapps
+
+TMP_DIR=$TOMCAT_HOME/temp
+WORK_DIR=$TOMCAT_HOME/work
+
+CATALINA_SH_PATH=/usr/sbin/dtomcat7
+
+SERVICE_NAME=horizon
+START_SCRIPT="service $SERVICE_NAME start"
+STOP_SCRIPT="service $SERVICE_NAME stop"
+STATUS_SCRIPT="service $SERVICE_NAME status"
+
+PID_FILE=horizon
+CONTEXT_NAME=ROOT
+# WAR_URL=http://192.168.10.4:8081/nexus/service/local/artifact/maven/content?g=com.intuit.mintbills&a=horizon-webapp&v=1.0.0&r=releases&p=war
+WAR_URL=https://nj1-28-2-nexus.nj.check.local/nexus/service/local/artifact/maven/content?g=com.intuit.mintbills&a=horizon-webapp&r=releases&p=war&v=

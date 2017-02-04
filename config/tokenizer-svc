@@ -1,0 +1,20 @@
+#!/bin/bash
+
+TOMCAT_HOME=/opt/token
+WEBAPP_LOCATION=$TOMCAT_HOME/webapps
+
+TMP_DIR=$TOMCAT_HOME/temp
+WORK_DIR=$TOMCAT_HOME/work
+
+CATALINA_SH_PATH=/etc/init.d/token
+
+SERVICE_NAME=token
+START_SCRIPT="service $SERVICE_NAME start"
+STOP_SCRIPT="service $SERVICE_NAME stop"
+STATUS_SCRIPT="service $SERVICE_NAME status"
+
+PID_FILE=token
+CONTEXT_NAME=ROOT
+
+#Version is passed by a user from Jenkins job
+WAR_URL=https://pci-nexus-int.pageonce.net/nexus/service/local/artifact/maven/content?g=com.intuit.mintbills&a=cegtokenizer-webapp&r=releases&p=war&v=

@@ -1,0 +1,3 @@
+SERVICE_NAME=hasky-node
+RPM_NAME=hasky-node-rpm
+PID_FILE=hasky-node/hasky-node

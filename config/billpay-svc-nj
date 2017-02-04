@@ -1,0 +1,20 @@
+#!/bin/bash
+
+export TOMCAT_HOME=/opt/billPayApp
+export WEBAPP_LOCATION=$TOMCAT_HOME/webapps
+
+export TMP_DIR=$TOMCAT_HOME/temp
+export WORK_DIR=$TOMCAT_HOME/work
+
+export CATALINA_SH_PATH=/etc/init.d/billPayApp
+
+export SERVICE_NAME=billPayApp
+export START_SCRIPT="service $SERVICE_NAME start"
+export STOP_SCRIPT="service $SERVICE_NAME stop"
+export STATUS_SCRIPT="service $SERVICE_NAME status"
+
+export PID_FILE=billPayApp
+export CONTEXT_NAME=ROOT
+
+#Version is passed by a user from Jenkins job
+export WAR_URL='https://nj1-28-2-nexus.nj.check.local/nexus/service/local/artifact/maven/content?g=com.intuit.billpay&a=billpay-webapp&r=releases&p=war&v='

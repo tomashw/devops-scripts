@@ -1,0 +1,24 @@
+#!/bin/bash
+
+SERVICE_NAME=apollo
+RPM_NAME=apollo-rpm
+PID_FILE=apollo/apollo
+
+##SC TOMCAT_HOME=/opt/apollosvc
+##SC WEBAPP_LOCATION=$TOMCAT_HOME/webapps
+
+##SC TMP_DIR=$TOMCAT_HOME/temp
+##SC WORK_DIR=$TOMCAT_HOME/work
+
+##SC CATALINA_SH_PATH=/etc/init.d/apollosvc
+
+##SC SERVICE_NAME=apollosvc
+##SC START_SCRIPT="service $SERVICE_NAME start"
+##SC STOP_SCRIPT="service $SERVICE_NAME stop"
+##SC STATUS_SCRIPT="service $SERVICE_NAME status"
+
+##SC PID_FILE=apollosvc
+##SC CONTEXT_NAME=ROOT
+
+#Version is passed by a user from Jenkins job
+##SC WAR_URL=https://prod-nexus-int.pageonce.net/nexus/service/local/artifact/maven/content?g=com.intuit.mintbills&a=mint-bills-apollo-svc&r=releases&p=war&v=
