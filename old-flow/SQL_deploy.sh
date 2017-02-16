@@ -7,7 +7,7 @@ parse_paramters() {
 	        --path=*)    SVN_PATH=${param##*--path=} ;;
             *)           log_this ERROR "Unknow parameter !!!"
 				         usage
-	                     exit 555
+	                     exit 5
 	        ;;
 	        esac
 	done
@@ -16,13 +16,13 @@ parse_paramters() {
 	if [ -z "$PO_ENV" ];then
 		echo "ERROR::po_env flag is mandatory"
 		usage
-		exit 12
+		exit 1
 	fi
     
     if [ -z "$SVN_PATH" ];then
 		echo "ERROR::path flag is mandatory"
 		usage
-		exit 12
+		exit 1
 	fi
 
 }
@@ -48,9 +48,9 @@ get_author_email() {
     URL_OF_TRUNK_FILE=$(svn info $1 --xml  | xmlstarlet sel -t -v //url | sed 's|branches/*[a-z A-Z]*/|trunk/|')
     AUTHOR_USERNAME=$(svn info $URL_OF_TRUNK_FILE --xml | xmlstarlet sel -t -v //author )
     AUTHOR_EMAIL=$(ldapsearch  -x  -LLL \
-        -D "CN=admin-http,OU=System Users,OU=Users,OU=MyBusiness,DC=Netgate,DC=local" \
+        -D "CN=admin-http,OU=System Users,OU=Users,OU=MyBusiness,DC=local" \
         -w ${LDAP_PASS} \
-        -b "OU=MyBusiness,DC=Netgate,DC=local" \
+        -b "OU=MyBusiness,DC=local" \
         -s sub \
         -H ldap://${LDAP_SERVER} \
         "(&(objectClass=user)(sAMAccountName=${AUTHOR_USERNAME}))" mail |grep ^mail |awk '{print $NF}')
@@ -96,12 +96,11 @@ check_if_file_was_run() {
 parse_paramters $*
 #source is for LDAP_PASS
 source ~/ldap_pass.sh
-#SVN_PATH="/home/oded/Project/PageOnce/trunk/storage/scripts/"
-DEFAULT_EMAIL="it_team@pageonce.com"
+
+DEFAULT_EMAIL="it_team@me.com"
 SQL_RUN_STRING="mysql --defaults-extra-file=~/.${PO_ENV}.cnf --batch  --skip-column-names --execute="
 UPDATE_SQL_RUN_STRING="mysql --defaults-extra-file=~/.${PO_ENV}.cnf --batch  -vvv --execute="
-#LDAP_SERVER="192.168.10.212"
-#LDAP_SERVER="10.1.1.176"
+
 LDAP_SERVER="adsrv"
 
 CURRENT_DB_VER="$(run_sql_query "select max(file_revision) - 1 from sql_deployed_files;")"
