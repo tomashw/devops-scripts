@@ -26,7 +26,7 @@ parse_server_table "$2"
 
 for server in ${!server_table[@]} ; do
    for package in ${server_table[$server]} ; do
-      package=$(find $omage_source -name ${package}-*.rpm)
+      package=$(find $monolith_source -name ${package}-*.rpm)
       echo "********************************************"
       echo "scp ${package} dev_user@${server}:"
       scp -o LogLevel=FATAL ${package} dev_user@${server}:
