@@ -1,6 +1,6 @@
 #!/bin/bash
 
-omage_source="$1"
+monolith_source="$1"
 
 if [ -z "$1" ] ; then
   echo "You must specify a build dir!!!" >&2
