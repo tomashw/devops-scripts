@@ -101,7 +101,7 @@ DEFAULT_EMAIL="it_team@me.com"
 SQL_RUN_STRING="mysql --defaults-extra-file=~/.${PO_ENV}.cnf --batch  --skip-column-names --execute="
 UPDATE_SQL_RUN_STRING="mysql --defaults-extra-file=~/.${PO_ENV}.cnf --batch  -vvv --execute="
 
-LDAP_SERVER="adsrv"
+LDAP_SERVER="someLDAPsrv"
 
 CURRENT_DB_VER="$(run_sql_query "select max(file_revision) - 1 from sql_deployed_files;")"
 TMPFILE=/tmp/$(basename $0).$$
