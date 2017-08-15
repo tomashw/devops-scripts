@@ -1,0 +1,3 @@
+SERVICE_NAME=sample-rpm_python
+RPM_NAME=sample-rpm-rpm
+PID_FILE=sample-rpm/samplerpm
