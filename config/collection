@@ -1,3 +1,0 @@
-SERVICE_NAME=collection_python
-RPM_NAME=collection-rpm
-PID_FILE=collection/collection
