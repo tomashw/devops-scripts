@@ -8,7 +8,7 @@ WORK_DIR=$TOMCAT_HOME/work
 
 CATALINA_SH_PATH=/etc/init.d/someapp
 
-SERVICE_NAME=billapp
+SERVICE_NAME=someapp
 START_SCRIPT="service $SERVICE_NAME start"
 STOP_SCRIPT="service $SERVICE_NAME stop"
 STATUS_SCRIPT="service $SERVICE_NAME status"
