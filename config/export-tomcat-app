@@ -16,5 +16,5 @@ export STATUS_SCRIPT="service $SERVICE_NAME status"
 export PID_FILE=export-tomcat-app
 export CONTEXT_NAME=ROOT
 
-#Version is passed by a user from Jenkins job
+#Version is passed by a user from Jenkins job choice list
 export WAR_URL='https://nexus.com/nexus/service/local/artifact/maven/content?g=com.mycompany.myorg&a=export-tomcat-app-webapp&r=releases&p=war&v='
