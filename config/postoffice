@@ -1,3 +1,0 @@
-SERVICE_NAME=postoffice-server
-RPM_NAME=postoffice-rpm
-PID_FILE=postoffice-server/postoffice-server
