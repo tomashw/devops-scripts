@@ -1,20 +1,20 @@
 #!/bin/bash
 
-TOMCAT_HOME=/opt/billPayApp
+TOMCAT_HOME=/opt/billapp
 WEBAPP_LOCATION=$TOMCAT_HOME/webapps
 
 TMP_DIR=$TOMCAT_HOME/temp
 WORK_DIR=$TOMCAT_HOME/work
 
-CATALINA_SH_PATH=/etc/init.d/billPayApp
+CATALINA_SH_PATH=/etc/init.d/billapp
 
-SERVICE_NAME=billPayApp
+SERVICE_NAME=billapp
 START_SCRIPT="service $SERVICE_NAME start"
 STOP_SCRIPT="service $SERVICE_NAME stop"
 STATUS_SCRIPT="service $SERVICE_NAME status"
 
-PID_FILE=billPayApp
+PID_FILE=billapp
 CONTEXT_NAME=ROOT
 
 #TODO version as a parameter passed by user from Jenkins job
-WAR_URL=https://prod-nexus-int.pageonce.net/nexus/service/local/artifact/maven/content?g=com.intuit.billpay&a=billpay-webapp&r=releases&p=war&v=
+WAR_URL=https://nexus.net/nexus/service/local/artifact/maven/content?g=com.intuit.billpay&a=billpay-webapp&r=releases&p=war&v=
