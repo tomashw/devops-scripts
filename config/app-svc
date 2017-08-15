@@ -3,22 +3,3 @@
 SERVICE_NAME=app
 RPM_NAME=app-rpm
 PID_FILE=app/app
-
-##SC TOMCAT_HOME=/opt/appsvc
-##SC WEBAPP_LOCATION=$TOMCAT_HOME/webapps
-
-##SC TMP_DIR=$TOMCAT_HOME/temp
-##SC WORK_DIR=$TOMCAT_HOME/work
-
-##SC CATALINA_SH_PATH=/etc/init.d/appsvc
-
-##SC SERVICE_NAME=appsvc
-##SC START_SCRIPT="service $SERVICE_NAME start"
-##SC STOP_SCRIPT="service $SERVICE_NAME stop"
-##SC STATUS_SCRIPT="service $SERVICE_NAME status"
-
-##SC PID_FILE=appsvc
-##SC CONTEXT_NAME=ROOT
-
-#Version is passed by a user from Jenkins job
-##SC WAR_URL=https://nexus.net/nexus/service/local/artifact/maven/content?g=com.mycompany.myorg&a=app-svc&r=releases&p=war&v=
