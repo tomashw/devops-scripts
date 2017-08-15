@@ -1,3 +1,0 @@
-SERVICE_NAME=solo-server
-RPM_NAME=solo-rpm
-PID_FILE=solo-server/solo-server
